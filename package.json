@@ -1,6 +1,6 @@
 {
   "name": "@keload/node-red-contrib-better-webdav",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A collection of nodes to interact with WebDAV servers in Node-RED.",
   "engines": {
     "node": ">=18"
