@@ -1,7 +1,7 @@
 {
   "builder": {
     "esbuildControllerOptions": {
-      "includeInBundle": ["webdav"]
+      "includeInBundle": ["webdav", "radash"]
     }
   }
 }

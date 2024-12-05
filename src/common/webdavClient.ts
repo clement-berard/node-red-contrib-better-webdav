@@ -1,4 +1,4 @@
-import { createClient } from 'webdav';
+import { AuthType, createClient } from 'webdav';
 
 type GetWebDavClientParams = {
   host: string;
@@ -8,18 +8,26 @@ type GetWebDavClientParams = {
 };
 
 export function getWebDavClient(params: GetWebDavClientParams) {
-  const basePath = params.basePath || '/';
+  // let basePath = params.basePath || '';
+  //
+  // if (basePath === '/') {
+  //   basePath = '';
+  // }
+  //
+  // if (basePath !== '' && basePath.endsWith('/')) {
+  //   basePath = basePath.slice(0, -1);
+  // }
 
-  return createClient(`${params.host}${basePath}`, {
+  return createClient(`${params.host}`, {
     username: params?.user,
     password: params?.password,
-    remoteBasePath: basePath,
+    remoteBasePath: '/',
+    authType: AuthType.Auto,
   });
 }
 
 export function resolveWebDavClient(serverConfigId: string) {
   const webdavServer = RED.nodes.getNode(serverConfigId);
-
   // @ts-ignore
   return getWebDavClient({
     // @ts-ignore
