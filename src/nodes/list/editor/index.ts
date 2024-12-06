@@ -12,6 +12,7 @@ import {
   NODES_COLOR,
   NODES_ICONS,
   cleanWebdavMethodsForSelect,
+  methodsEnum,
 } from '../../../common/constants-client-side';
 import type { NodeListProps } from '../types';
 
@@ -35,16 +36,18 @@ const List = createEditorNode<NodeEditorProps<NodeListProps>>({
     return this.name || this.action || 'webdav fns';
   },
   oneditsave: function () {
-    this.getDirectoryContents = getFormValues('getDirectoryContents');
-    this.deleteFile = getFormValues('deleteFile');
+    methodsEnum.forEach((method) => {
+      this[method] = getFormValues(method);
+    });
   },
   oneditprepare: function () {
     jqSelector('$entry').typedInput({
       types: ['msg', 'flow', 'global', 'json', 'jsonata'],
       typeField: resolveSelector('$entryType'),
     });
-    setFormValues('getDirectoryContents', this.getDirectoryContents);
-    setFormValues('deleteFile', this.deleteFile);
+    methodsEnum.forEach((method) => {
+      setFormValues(method, this[method]);
+    });
     initSelect('$action', cleanWebdavMethodsForSelect, {
       selected: this.action,
       emptyValue: ' ',
@@ -65,23 +68,6 @@ const List = createEditorNode<NodeEditorProps<NodeListProps>>({
     watchInput('$action', ([actionValue]) => {
       handleSelectActionChange(actionValue);
     });
-
-    // const actions = ['list', 'delete'];
-    // console.log('cleanWebdavMethodsForSelect', cleanWebdavMethodsForSelect);
-    // if (this.action) {
-    //   handleAddRemoveClassesOnSelectors('remove', [`.action-${this.action}`], ['hidden']);
-    // }
-    //
-    // watchInput('$action', ([actionValue]) => {
-    //   handleAddRemoveClassesOnSelectors(
-    //     'add',
-    //     actions.map((action) => `.action-${action}`),
-    //     ['hidden'],
-    //   );
-    //   if (actionValue) {
-    //     handleAddRemoveClassesOnSelectors('remove', [`.action-${actionValue}`], ['hidden']);
-    //   }
-    // });
   },
 });
 
