@@ -1,81 +1,21 @@
-<div class="dxp-form-row">
-    <div class="main">
-        <div>
-            <i class="fa fa-tv"></i>
-            <label for="node-input-webdavServer">Server</label>
-        </div>
-        <input type="text" id="node-input-webdavServer"/>
-    </div>
-</div>
-<div class="dxp-form-row">
-    <div class="main">
-        <div>
-            <i class="fa fa-tag"></i>
-            <label for="node-input-name">Name</label>
-        </div>
-        <input type="text" id="node-input-name"/>
-    </div>
-</div>
-<div class="dxp-form-row">
-    <div class="main">
-        <div>
-            <i class="fa fa-ellipsis-h"></i>
-            <label for="node-input-entry">Property</label>
-        </div>
-        <input type="text" id="node-input-entry">
-        <input type="hidden" id="node-input-entryType">
-    </div>
+<dxp-form-row label="Server" type="text" row-id="webdavServer" icon="tv"></dxp-form-row>
+<dxp-form-row label="Name" type="text" row-id="name" icon="tag"></dxp-form-row>
+<dxp-form-row label="Property" type="text" row-id="entry" icon="ellipsis-h">
     <div class="hint">
         If empty, configuration below will be used.
     </div>
-</div>
-<div class="dxp-form-row">
-    <div class="main">
-        <div>
-            <i class="fa fa-bolt"></i>
-            <label for="node-input-action">Action</label>
-        </div>
-        <select id="node-input-action"></select>
-    </div>
-</div>
+</dxp-form-row>
+<input type="hidden" id="node-input-entryType">
+<dxp-form-row label="Action" type="select" row-id="action" icon="bolt"></dxp-form-row>
 <div class="extra-params getDirectoryContents">
-    <div class="dxp-form-row">
-        <div class="main">
-            <div>
-                <i class="fa fa-folder"></i>
-                <label for="node-input-getDirectoryContents-directory">Directory</label>
-            </div>
-            <input type="text" id="node-input-getDirectoryContents-directory"/>
-        </div>
-    </div>
-<!--    <div class="dxp-form-row">-->
-<!--        <div class="main">-->
-<!--            <div>-->
-<!--                <label for="node-input-getDirectoryContents-deep">Deep</label>-->
-<!--            </div>-->
-<!--            <input type="checkbox" id="node-input-getDirectoryContents-deep"/>-->
-<!--        </div>-->
-<!--    </div>-->
-    <div class="dxp-form-row">
-        <div class="main">
-            <div>
-                <label for="node-input-getDirectoryContents-details">Details</label>
-            </div>
-            <input type="checkbox" id="node-input-getDirectoryContents-details"/>
-        </div>
-    </div>
+    <dxp-form-row label="Directory" type="text" row-id="getDirectoryContents-directory" icon="folder-o"></dxp-form-row>
+    <dxp-form-row label="Details" type="checkbox" row-id="getDirectoryContents-details"></dxp-form-row>
 </div>
+
 <div class="extra-params deleteFile">
-    <div class="dxp-form-row">
-        <div class="main">
-            <div>
-                <i class="fa fa-folder"></i>
-                <label for="node-input-deleteFile-directory">Directory</label>
-            </div>
-            <input type="text" id="node-input-deleteFile-directory"/>
-        </div>
+    <dxp-form-row label="Directory" type="text" row-id="deleteFile-directory" icon="folder-o">
         <div class="hint">
-            Folder/File. If folder, it must end with a slash.
+            Folder/File. If folder, it must end  with a slash.
         </div>
-    </div>
+    </dxp-form-row>
 </div>

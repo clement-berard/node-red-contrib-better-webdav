@@ -1,5 +1,5 @@
 import { type NodeEditorProps, createEditorNode } from '@keload/node-red-dxp/editor';
-import { validators } from '@keload/node-red-dxp/utils';
+import { isUrl } from '@keload/node-red-dxp/utils';
 import type { NodeCredentials, NodeProps } from '../types';
 
 const WebdavConfig = createEditorNode<NodeEditorProps<NodeProps>, NodeCredentials>({
@@ -7,7 +7,7 @@ const WebdavConfig = createEditorNode<NodeEditorProps<NodeProps>, NodeCredential
   defaults: {
     name: { value: '', required: true },
     basePath: { value: '' },
-    host: { value: '', required: true, validate: (v) => validators.isUrl(v) },
+    host: { value: '', required: true, validate: (v) => isUrl(v) },
   },
   credentials: {
     user: { type: 'text' },
