@@ -19,7 +19,7 @@ export default function (this: NodeControllerInst<NodeListProps>, config: NodeCo
   const action = config.action;
 
   const actions = {
-    getDirectoryContents: (innerPayload: Record<any, any>) => {
+    getDirectoryContents: (innerPayload: Record<string, unknown>) => {
       const [err, resp] = resolveActionData(config, 'getDirectoryContents', innerPayload);
       if (err) {
         return [err] as const;
@@ -28,7 +28,34 @@ export default function (this: NodeControllerInst<NodeListProps>, config: NodeCo
       const { directory, ...options } = resp || {};
       return tryit(webDavClient.getDirectoryContents)(directory || '/', options || {});
     },
-    deleteFile: (innerPayload: Record<any, any>) => {
+    getFileContents: (innerPayload: Record<string, unknown>) => {
+      const [err, resp] = resolveActionData(config, 'getFileContents', innerPayload);
+      if (err) {
+        return [err] as const;
+      }
+
+      const { file, ...options } = resp || {};
+      return tryit(webDavClient.getFileContents)(file, options || {});
+    },
+    createDirectory: (innerPayload: Record<string, unknown>) => {
+      const [err, resp] = resolveActionData(config, 'createDirectory', innerPayload);
+      if (err) {
+        return [err] as const;
+      }
+
+      const { directory, ...options } = resp || {};
+      return tryit(webDavClient.createDirectory)(directory, options || {});
+    },
+    exists: (innerPayload: Record<string, unknown>) => {
+      const [err, resp] = resolveActionData(config, 'exists', innerPayload);
+      if (err) {
+        return [err] as const;
+      }
+
+      const { directory } = resp || {};
+      return tryit(webDavClient.exists)(directory);
+    },
+    deleteFile: (innerPayload: Record<string, unknown>) => {
       const [err, resp] = resolveActionData(config, 'deleteFile', innerPayload);
       if (err) {
         return [err] as const;

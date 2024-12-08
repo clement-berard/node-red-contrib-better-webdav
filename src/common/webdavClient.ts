@@ -8,16 +8,6 @@ type GetWebDavClientParams = {
 };
 
 export function getWebDavClient(params: GetWebDavClientParams) {
-  // let basePath = params.basePath || '';
-  //
-  // if (basePath === '/') {
-  //   basePath = '';
-  // }
-  //
-  // if (basePath !== '' && basePath.endsWith('/')) {
-  //   basePath = basePath.slice(0, -1);
-  // }
-
   return createClient(`${params.host}`, {
     username: params?.user,
     password: params?.password,

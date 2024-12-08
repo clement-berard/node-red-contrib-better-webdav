@@ -10,4 +10,7 @@ export interface NodeListProps {
   entryType: string;
   getDirectoryContents: OrEmpty<Infer<(typeof actionValidators)['getDirectoryContents']['schema']>>;
   deleteFile: OrEmpty<Infer<(typeof actionValidators)['deleteFile']['schema']>>;
+  getFileContents: OrEmpty<Infer<(typeof actionValidators)['getFileContents']['schema']>>;
+  createDirectory: OrEmpty<Infer<(typeof actionValidators)['createDirectory']['schema']>>;
+  exists: OrEmpty<Infer<(typeof actionValidators)['exists']['schema']>>;
 }
