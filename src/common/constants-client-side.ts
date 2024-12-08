@@ -34,6 +34,7 @@ export const webdavMethods: WebdavMethods[] = [
   },
   {
     methodName: 'exists',
+    enabled: true,
   },
   {
     methodName: 'getDirectoryContents',

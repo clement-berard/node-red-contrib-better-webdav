@@ -1,5 +1,4 @@
 import * as sstruct from 'superstruct';
-import type { Infer } from 'superstruct';
 import { methodsEnum } from './constants-client-side';
 
 export const methodsSchema = sstruct.enums(methodsEnum);
@@ -25,6 +24,11 @@ export const actionValidators = {
     }),
   },
   deleteFile: {
+    schema: sstruct.object({
+      directory: sstruct.string(),
+    }),
+  },
+  exists: {
     schema: sstruct.object({
       directory: sstruct.string(),
     }),

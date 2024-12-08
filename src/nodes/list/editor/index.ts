@@ -29,6 +29,7 @@ const List = createEditorNode<NodeEditorProps<NodeListProps>>({
     deleteFile: { value: {} },
     getFileContents: { value: {} },
     createDirectory: { value: {} },
+    exists: { value: {} },
   },
   inputs: 1,
   outputs: 1,
