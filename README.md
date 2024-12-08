@@ -37,9 +37,10 @@ All actions use the same node, you just need to change the action in the node co
 
 Many feature are missing, but the package is growing. Here is the list of the current features:
 
+### `createDirectory`
 ### `deleteFile`
-
 ### `getDirectoryContents`
+### `getFileContents`
 
 ## Roadmap
 

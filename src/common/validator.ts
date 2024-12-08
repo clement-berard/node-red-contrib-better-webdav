@@ -12,6 +12,18 @@ export const actionValidators = {
       directory: sstruct.string(),
     }),
   },
+  getFileContents: {
+    schema: sstruct.object({
+      file: sstruct.string(),
+      format: sstruct.enums(['text', 'binary']),
+    }),
+  },
+  createDirectory: {
+    schema: sstruct.object({
+      directory: sstruct.string(),
+      recursive: sstruct.optional(sstruct.boolean()),
+    }),
+  },
   deleteFile: {
     schema: sstruct.object({
       directory: sstruct.string(),

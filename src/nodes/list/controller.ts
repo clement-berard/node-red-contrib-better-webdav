@@ -28,6 +28,24 @@ export default function (this: NodeControllerInst<NodeListProps>, config: NodeCo
       const { directory, ...options } = resp || {};
       return tryit(webDavClient.getDirectoryContents)(directory || '/', options || {});
     },
+    getFileContents: (innerPayload: Record<any, any>) => {
+      const [err, resp] = resolveActionData(config, 'getFileContents', innerPayload);
+      if (err) {
+        return [err] as const;
+      }
+
+      const { file, ...options } = resp || {};
+      return tryit(webDavClient.getFileContents)(file, options || {});
+    },
+    createDirectory: (innerPayload: Record<any, any>) => {
+      const [err, resp] = resolveActionData(config, 'createDirectory', innerPayload);
+      if (err) {
+        return [err] as const;
+      }
+
+      const { directory, ...options } = resp || {};
+      return tryit(webDavClient.createDirectory)(directory, options || {});
+    },
     deleteFile: (innerPayload: Record<any, any>) => {
       const [err, resp] = resolveActionData(config, 'deleteFile', innerPayload);
       if (err) {

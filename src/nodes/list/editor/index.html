@@ -15,7 +15,27 @@
 <div class="extra-params deleteFile">
     <dxp-form-row label="Directory" type="text" row-id="deleteFile-directory" icon="folder-o">
         <div class="hint">
-            Folder/File. If folder, it must end  with a slash.
+            Folder/File. If folder, it must end with a slash.
         </div>
     </dxp-form-row>
+</div>
+
+<div class="extra-params getFileContents">
+    <dxp-form-row label="File" type="text" row-id="getFileContents-file" icon="folder"></dxp-form-row>
+    <div class="dxp-form-row">
+        <div class="main">
+            <div>
+                <label for="node-input-getFileContents-format">Format</label>
+            </div>
+            <select id="node-input-getFileContents-format">
+                <option value="text" selected>text</option>
+                <option value="binary">binary</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="extra-params createDirectory">
+    <dxp-form-row label="Directory" type="text" row-id="createDirectory-directory" icon="folder-o"></dxp-form-row>
+    <dxp-form-row label="Recursive" type="checkbox" row-id="createDirectory-recursive"></dxp-form-row>
 </div>

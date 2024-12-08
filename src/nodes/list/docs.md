@@ -1,13 +1,4 @@
-In the node you can list or delete directories/files.
+A collection of nodes to manage WebDAV with Node-RED.
 
-### Inputs
-
-: payload (string) :  the folder to list or delete.
-
-### Outputs
-
-1. Standard output
-   : payload (string) : void if delete, list of files and directories if list.
-
-2. Standard error
-   : payload (string) : the standard error of the command.
+_If payload is passed, it will set values passed in the payload.
+All other values configured in the node will be ignored._

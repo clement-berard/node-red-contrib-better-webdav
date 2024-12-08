@@ -16,6 +16,7 @@ export const webdavMethods: WebdavMethods[] = [
   },
   {
     methodName: 'createDirectory',
+    enabled: true,
   },
   {
     methodName: 'createReadStream',
@@ -40,6 +41,7 @@ export const webdavMethods: WebdavMethods[] = [
   },
   {
     methodName: 'getFileContents',
+    enabled: true,
   },
   {
     methodName: 'getFileDownloadLink',
