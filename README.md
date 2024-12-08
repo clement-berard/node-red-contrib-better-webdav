@@ -39,6 +39,7 @@ Many feature are missing, but the package is growing. Here is the list of the cu
 
 ### `createDirectory`
 ### `deleteFile`
+### `exists`
 ### `getDirectoryContents`
 ### `getFileContents`
 
