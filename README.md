@@ -31,6 +31,16 @@ A collection of nodes to manage WebDAV with Node-RED.
   </a>
 </p>
 
+## Disclaimer
+
+This package is largely inspired by the excellent [node-red-node-webdav](https://flows.nodered.org/node/node-red-node-webdav) package 💪
+
+However, I needed additional features not available in the existing package. As a result, I decided to create my own.
+
+This isn't intended to replace the existing library. It was also a personal project to help me practice building Node-RED nodes, explore how to create them in TypeScript, and deepen my understanding of the process.
+
+There's no pretense that this is better than the original package—just a different approach for specific needs and learning purposes.
+
 ## Features
 
 All actions use the same node, you just need to change the action in the node configuration or use entry property.
@@ -53,10 +63,6 @@ This package use [node-red-dxp](https://www.npmjs.com/package/@keload/node-red-d
 A crazy fast and easy way to build Node-RED package.
 
 Please feel free to contribute to this package by creating issues or pull requests.
-
-## Notes
-
-Inspired by https://flows.nodered.org/node/node-red-node-webdav
 
 ## License
 
