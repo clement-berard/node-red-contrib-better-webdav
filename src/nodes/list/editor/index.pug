@@ -1,0 +1,88 @@
+.dxp-template-form-row
+    label(for="node-input-webdavServer")
+        i.fa.fa-tv
+        | Server
+    .content
+        input(type="text" id="node-input-webdavServer")
+
+.dxp-template-form-row
+    label(for="node-input-name")
+        i.fa.fa-tag
+        | Name
+    .content
+        input(type="text" id="node-input-name")
+
+.dxp-template-form-row
+    label(for="node-input-entry")
+        i.fa.fa-ellipsis-h
+        | Property
+    .content
+        input(type="text" id="node-input-entry")
+        input(type="hidden" id="node-input-entryType")
+        .hint If empty, configuration below will be used.
+
+.dxp-template-form-row
+    label(for="node-input-action")
+        i.fa.fa-bolt
+        | Action
+    .content
+        select#node-input-action
+
+section.extra-params.getDirectoryContents
+    .dxp-template-form-row
+        label(for="node-input-getDirectoryContents-directory")
+            i.fa.fa-folder-o
+            | Directory
+        .content
+            input(type="text" id="node-input-getDirectoryContents-directory")
+
+    .dxp-template-form-row
+        label(for="node-input-getDirectoryContents-details")
+            | Details
+        .content
+            .checkbox
+                input(type="checkbox" id="node-input-getDirectoryContents-details")
+
+section.extra-params.deleteFile
+    .dxp-template-form-row
+        label(for="node-input-deleteFile-directory")
+            i.fa.fa-folder-o
+            | Directory
+        .content
+            input(type="text" id="node-input-deleteFile-directory")
+
+section.extra-params.getFileContents
+    .dxp-template-form-row
+        label(for="node-input-getFileContents-file")
+            i.fa.fa-folder
+            | File
+        .content
+            input(type="text" id="node-input-getFileContents-file")
+    .dxp-template-form-row
+        label(for="node-input-getFileContents-format") Format
+        .content
+            select#node-input-getFileContents-format
+                option(value="text" selected) text
+                option(value="binary") binary
+
+section.extra-params.createDirectory
+    .dxp-template-form-row
+        label(for="node-input-createDirectory-directory")
+            i.fa.fa-folder-o
+            | Directory
+        .content
+            input(type="text" id="node-input-createDirectory-directory")
+    .dxp-template-form-row
+        label(for="node-input-createDirectory-recursive") Recursive
+        .content
+            .checkbox
+                input(type="checkbox" id="node-input-createDirectory-recursive")
+
+section.extra-params.exists
+    .dxp-template-form-row
+        label(for="node-input-exists-directory")
+            i.fa.fa-folder-o
+            | Directory
+        .content
+            input(type="text" id="node-input-exists-directory")
+            .hint If empty, configuration below will be used.
