@@ -1,5 +1,8 @@
 # node-red-contrib-better-webdav
 
+> [!WARNING]
+> **This package is deprecated and no longer maintained.**
+
 A collection of nodes to manage WebDAV with Node-RED.
 
 <br/>
